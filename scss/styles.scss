@@ -1,0 +1,73 @@
+@import 'config';
+
+// Utilities
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: $font;
+    line-height: 1.6;
+    font-size: 16px;
+    background-color:$light-color;
+}
+
+.container{
+    width:80%;
+    margin:0 auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+}
+
+a{
+    text-decoration:none;
+}
+
+.logo{
+    margin:25px 0;
+    color:$primary-color;
+}
+
+//Navigation bar
+#main-nav{
+    ul{
+        display: flex;
+        list-style-type: none;
+    }
+    li{
+        margin:25px 15px;
+    }
+    a{
+        color:$primary-color;
+    }
+    a:hover{
+        color:darken($primary-color, 20%);
+    }
+}
+
+// Contacts Info
+.contact-info{
+    display: flex;
+}
+
+#contacts{
+    width:60%;
+}
+
+aside{
+    width:30%;
+}
+
+// Footer
+footer{
+    text-align:center;
+    background-color: $primary-color;
+    padding: 25px 0;
+    color:#fff;
+    margin: 30px 0 0;
+}
