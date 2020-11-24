@@ -30,7 +30,7 @@ small {
 }
 
 header {
-    margin: 2% 0;
+    margin: 4% 0;
 }
 
 .logo{
@@ -69,22 +69,17 @@ footer{
 }
 
 @media (min-width: 1000px) {
-    // .nav-container {
-    //     position: fixed;
-    // }
-    
-    #main-nav{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        right: 0;
-        top: 35%;
-
+    nav{
         ul{
             list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 35%;
+            right: 0;
         }
         li{
-            margin:25px 15px;
+            margin:10px 15px;
         }
         a{
             background-color: $primary-color;
@@ -95,7 +90,6 @@ footer{
     #about-content {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-gap: 15%;
 
         img {
             display: block;
