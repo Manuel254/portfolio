@@ -38,16 +38,23 @@ header {
     font-style: italic;
 }
 
+h1 {
+    border-bottom: 3px solid $primary-color;
+    width: 50px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
 // Main section
 
 #about-content {
-    margin: 5% 8% 5% 0;
+    margin: 0 8% 5% 0;
     text-align: justify;
 }
 
 #about-content{
     span {
-        font-size: 2.5rem;
+        font-size: 1.7rem;
         display: block;
     }
     img {
@@ -93,8 +100,9 @@ footer{
 
         img {
             display: block;
-            background-color: $background-color;
+            background-color: $primary-color;
             border-radius: 50%;
+            border: 1px solid $dark-color;
             max-width: 500px;
             position: absolute;
             top: 10%;
