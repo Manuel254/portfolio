@@ -11,7 +11,8 @@ body{
     font-family: $font;
     line-height: 1.6;
     font-size: 16px;
-    background-color:$light-color;
+    background-color:$background-color;
+    color: $text-color;
 }
 
 .container{
@@ -19,49 +20,44 @@ body{
     margin:0 auto;
 }
 
-header{
-    display: flex;
-    justify-content: space-around;
-}
-
 a{
     text-decoration:none;
+    color: $text-color;
+}
+
+small {
+    font-size: .8em;
+}
+
+header {
+    margin: 2% 0;
 }
 
 .logo{
-    margin:25px 0;
-    color:$primary-color;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+// Main section
+
+#about-content {
+    margin: 5% 8% 5% 0;
+    text-align: justify;
+}
+
+#about-content{
+    span {
+        font-size: 2.5rem;
+        display: block;
+    }
+    img {
+        display: none;
+        height: 400px;
+    }
 }
 
 //Navigation bar
-#main-nav{
-    ul{
-        display: flex;
-        list-style-type: none;
-    }
-    li{
-        margin:25px 15px;
-    }
-    a{
-        color:$primary-color;
-    }
-    a:hover{
-        color:darken($primary-color, 20%);
-    }
-}
 
-// Contacts Info
-.contact-info{
-    display: flex;
-}
-
-#contacts{
-    width:60%;
-}
-
-aside{
-    width:30%;
-}
 
 // Footer
 footer{
@@ -70,4 +66,46 @@ footer{
     padding: 25px 0;
     color:#fff;
     margin: 30px 0 0;
+}
+
+@media (min-width: 1000px) {
+    // .nav-container {
+    //     position: fixed;
+    // }
+    
+    #main-nav{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 35%;
+
+        ul{
+            list-style-type: none;
+        }
+        li{
+            margin:25px 15px;
+        }
+        a{
+            background-color: $primary-color;
+            padding:5px 10px;
+        }
+    }
+
+    #about-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 15%;
+
+        img {
+            display: block;
+            background-color: $background-color;
+            border-radius: 50%;
+            max-width: 500px;
+            position: absolute;
+            top: 10%;
+            right: 15%;
+        }
+    }
+    
 }
