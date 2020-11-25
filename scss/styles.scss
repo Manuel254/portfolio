@@ -34,7 +34,7 @@ header {
 }
 
 .logo{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-style: italic;
 }
 
@@ -43,10 +43,51 @@ h1 {
     width: 50px;
     font-size: 2rem;
     margin-bottom: 10px;
+    margin-top: 5px;
+}
+#about,
+#skills {
+    border-bottom: 1px solid $primary-color;
+    padding:0 0 5% 0;
 }
 
 // Main section
+.hamburger {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: $primary-color;
+    font-size: 2em;
+    position: relative;
+    margin: 2% 0;
+    top: 5%;
+}
 
+.hamburger:focus {
+    outline: none;
+}
+
+nav {
+    padding:0 4%;
+    margin: 0 6%;
+    #nav-ul{
+        display: none;
+    }
+    #nav-ul.show {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid $primary-color;
+    } 
+    li {
+        list-style-type: none;
+        padding-bottom: 3%;
+    }
+    a{
+        color: $primary-color;
+    }
+}
+
+// About section
 #about-content {
     margin: 0 8% 5% 0;
     text-align: justify;
@@ -59,12 +100,48 @@ h1 {
     }
     img {
         display: none;
-        height: 400px;
     }
 }
 
-//Navigation bar
+// Skills section
+.skill-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin-top: 5%;
 
+    .skill-card {
+        background-color: $dark-color;
+        text-align: center;
+        border-radius: 5px;
+        min-height: 55vh;
+        margin: 15px;
+        box-shadow: 4px 4px 30px 2px $primary-color;
+        padding:15px 0;
+
+        .card-title {
+            font-weight: 200;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
+        i {
+            color: $primary-color;
+            border-radius: 50%;
+            padding: 30px;
+            font-size: 3em;
+        }
+
+        ul {
+            margin: 10px 0;
+        }
+
+        li {
+            list-style-type: none;
+            padding-bottom: 15px;
+        }
+    }
+}
 
 // Footer
 footer{
@@ -75,23 +152,37 @@ footer{
     margin: 30px 0 0;
 }
 
+// Desktop resets
 @media (min-width: 1000px) {
     nav{
-        ul{
+        #nav-ul.show {
             list-style-type: none;
             display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 35%;
-            right: 0;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 3%;
+            border: none;
+        }
+        #nav-ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 3%;
         }
         li{
-            margin:10px 15px;
+            padding:10px 20px;
         }
         a{
-            background-color: $primary-color;
-            padding:5px 10px;
+            color: #fff;
         }
+        a:hover {
+            color: $primary-color;
+        }
+    }
+
+    .hamburger {
+        display: none;
     }
 
     #about-content {
@@ -103,10 +194,25 @@ footer{
             background-color: $primary-color;
             border-radius: 50%;
             max-width: 500px;
+            height: 400px;
             position: absolute;
-            top: 20%;
-            right: 15%;
+            top: 22%;
+            right: 10%;
         }
     }
-    
+
+    // Skill section
+    .skill-section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 10px;
+
+        .skill-card:nth-child(2),
+        .skill-card:nth-child(4)
+        {
+            margin-top:-15px;
+            margin-bottom: 50px;
+        }
+    }
 }
